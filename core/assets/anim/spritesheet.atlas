@@ -1,0 +1,48 @@
+
+spritesheet.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ratf
+  rotate: false
+  xy: 2, 454
+  size: 300, 450
+  orig: 300, 450
+  offset: 0, 0
+  index: 1
+ratf
+  rotate: false
+  xy: 2, 2
+  size: 300, 450
+  orig: 300, 450
+  offset: 0, 0
+  index: 2
+ratf
+  rotate: false
+  xy: 304, 454
+  size: 300, 450
+  orig: 300, 450
+  offset: 0, 0
+  index: 3
+ratf
+  rotate: false
+  xy: 304, 2
+  size: 300, 450
+  orig: 300, 450
+  offset: 0, 0
+  index: 4
+ratf
+  rotate: false
+  xy: 606, 454
+  size: 300, 450
+  orig: 300, 450
+  offset: 0, 0
+  index: 5
+ratf
+  rotate: false
+  xy: 606, 2
+  size: 300, 450
+  orig: 300, 450
+  offset: 0, 0
+  index: 6
