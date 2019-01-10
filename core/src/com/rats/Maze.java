@@ -156,7 +156,7 @@ public class Maze {
 
 
     public void generateConsumables() {
-        int num_consumables = rand.nextInt(10)+1;
+        int num_consumables = rand.nextInt(50)+1;
         consumables = new Consumable[num_consumables];
         for (int i=0; i < num_consumables; i++) {
             int xpos = 0;

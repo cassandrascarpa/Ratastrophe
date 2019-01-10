@@ -81,6 +81,7 @@ public class MenuScreen implements Screen {
             }
 
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(new InstructionScreen(game));
                 return true;
             }
         });
@@ -103,6 +104,7 @@ public class MenuScreen implements Screen {
             }
 
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(new CreditScreen(game));
                 return true;
             }
         });
@@ -125,6 +127,7 @@ public class MenuScreen implements Screen {
             }
 
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(new SettingScreen(game));
                 return true;
             }
         });
@@ -147,6 +150,7 @@ public class MenuScreen implements Screen {
             }
 
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                game.setScreen(new HighScoreScreen(game));
                 return true;
             }
         });
