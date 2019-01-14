@@ -42,9 +42,9 @@ public class MenuScreen implements Screen {
     }
 
     private void initializeButtons() {
-        playTexture = new Texture("core/assets/button_play.png");
+        playTexture = new Texture("core/assets/menu/button_play.png");
         playDrawable = new TextureRegionDrawable(new TextureRegion(playTexture));
-        playTextureHover = new Texture("core/assets/button_play_hover.png");
+        playTextureHover = new Texture("core/assets/menu/button_play_hover.png");
         playDrawableHover = new TextureRegionDrawable(new TextureRegion(playTextureHover));
         playButton = new ImageButton(playDrawable);
 
@@ -65,9 +65,9 @@ public class MenuScreen implements Screen {
 
         playButton.setPosition(Gdx.graphics.getWidth()/2 - 70, 240);
 
-        instructionTexture = new Texture("core/assets/button_instructions.png");
+        instructionTexture = new Texture("core/assets/menu/button_instructions.png");
         instructionDrawable = new TextureRegionDrawable(new TextureRegion(instructionTexture));
-        instructionTextureHover = new Texture("core/assets/button_instructions_hover.png");
+        instructionTextureHover = new Texture("core/assets/menu/button_instructions_hover.png");
         instructionDrawableHover = new TextureRegionDrawable(new TextureRegion(instructionTextureHover));
         instructionButton = new ImageButton(instructionDrawable);
 
@@ -88,9 +88,9 @@ public class MenuScreen implements Screen {
 
         instructionButton.setPosition(Gdx.graphics.getWidth()/2 - 120, 200);
 
-        creditsTexture = new Texture("core/assets/button_credits.png");
+        creditsTexture = new Texture("core/assets/menu/button_credits.png");
         creditsDrawable = new TextureRegionDrawable(new TextureRegion(creditsTexture));
-        creditsTextureHover = new Texture("core/assets/button_credits_hover.png");
+        creditsTextureHover = new Texture("core/assets/menu/button_credits_hover.png");
         creditsDrawableHover = new TextureRegionDrawable(new TextureRegion(creditsTextureHover));
         creditsButton = new ImageButton(creditsDrawable);
 
@@ -111,9 +111,9 @@ public class MenuScreen implements Screen {
 
         creditsButton.setPosition(Gdx.graphics.getWidth()/2 - 80, 160);
 
-        settingsTexture = new Texture("core/assets/button_settings.png");
+        settingsTexture = new Texture("core/assets/menu/button_settings.png");
         settingsDrawable = new TextureRegionDrawable(new TextureRegion(settingsTexture));
-        settingsTextureHover = new Texture("core/assets/button_settings_hover.png");
+        settingsTextureHover = new Texture("core/assets/menu/button_settings_hover.png");
         settingsDrawableHover = new TextureRegionDrawable(new TextureRegion(settingsTextureHover));
         settingsButton = new ImageButton(settingsDrawable);
 
@@ -134,9 +134,9 @@ public class MenuScreen implements Screen {
 
         settingsButton.setPosition(Gdx.graphics.getWidth()/2 - 80, 120);
 
-        scoresTexture = new Texture("core/assets/button_highscores.png");
+        scoresTexture = new Texture("core/assets/menu/button_highscores.png");
         scoresDrawable = new TextureRegionDrawable(new TextureRegion(scoresTexture));
-        scoresTextureHover = new Texture("core/assets/button_highscores_hover.png");
+        scoresTextureHover = new Texture("core/assets/menu/button_highscores_hover.png");
         scoresDrawableHover = new TextureRegionDrawable(new TextureRegion(scoresTextureHover));
         scoresButton = new ImageButton(scoresDrawable);
 
@@ -163,7 +163,7 @@ public class MenuScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.batch.begin();
-        game.batch.draw(new Texture("core/assets/logo.png"), 0, 300, Gdx.graphics.getWidth(), 200);
+        game.batch.draw(new Texture("core/assets/menu/logo.png"), 0, 300, Gdx.graphics.getWidth(), 200);
         game.batch.end();
 
         stage.act(Gdx.graphics.getDeltaTime());
@@ -175,6 +175,7 @@ public class MenuScreen implements Screen {
     }
 
     public void hide() {
+        dispose();
 
     }
 
@@ -192,6 +193,7 @@ public class MenuScreen implements Screen {
 
 
     public void dispose() {
+        stage.dispose();
 
     }
 }

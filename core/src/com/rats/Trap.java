@@ -28,12 +28,12 @@ public class Trap {
         switch(typenum) {
             case 0:
                 type = trap_types.Snapper;
-                texture = new Texture(Gdx.files.internal("core/assets/snapper.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/snapper.png"));
                 damage = 50;
                 break;
             default:
                 type = trap_types.Zapper;
-                texture = new Texture(Gdx.files.internal("core/assets/zapper.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/zapper.png"));
                 damage = 20;
                 break;
         }
@@ -46,6 +46,10 @@ public class Trap {
             rat.setHealth(rat.getHealth() - damage);
             sprung = true;
         }
+    }
+
+    public void animate() {
+
     }
 
     public Rectangle getBoundingRectangle() {

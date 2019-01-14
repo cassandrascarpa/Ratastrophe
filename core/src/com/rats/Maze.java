@@ -41,7 +41,7 @@ public class Maze {
         BufferedWriter out = null;
 
         try {
-            FileWriter fstream = new FileWriter("core/assets/random_maze.tmx", false);
+            FileWriter fstream = new FileWriter("core/assets/tilemaps/random_maze.tmx", false);
             out = new BufferedWriter(fstream);
             out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             out.write("<map version=\"1.0\" tiledversion=\"2017.07.26\" orientation=\"orthogonal\" renderorder=\"right-down\" " +
@@ -156,7 +156,7 @@ public class Maze {
 
 
     public void generateConsumables() {
-        int num_consumables = rand.nextInt(50)+1;
+        int num_consumables = rand.nextInt(10)+1;
         consumables = new Consumable[num_consumables];
         for (int i=0; i < num_consumables; i++) {
             int xpos = 0;

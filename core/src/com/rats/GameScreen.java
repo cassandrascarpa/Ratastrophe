@@ -1,5 +1,8 @@
 package com.rats;
 
+import box2dLight.DirectionalLight;
+import box2dLight.PointLight;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.Gdx;
@@ -37,6 +40,10 @@ public class GameScreen implements Screen {
 
     private int startHealth;
 
+    private Texture dark;
+
+    PointLight pl;
+
 
     public GameScreen(final Rats game, int score, int startHealth) {
 
@@ -53,6 +60,8 @@ public class GameScreen implements Screen {
 
         state = GameState.Preview;
 
+        dark = new Texture("core/assets/dark_fov.png");
+
     }
 
     public void startNewLevel() {
@@ -67,7 +76,7 @@ public class GameScreen implements Screen {
         rat = new Character((int) startPos.x,(int) startPos.y,10,10);
         rat.setHealth(startHealth);
 
-        tiledMap = new TmxMapLoader().load("core/assets/random_maze.tmx");
+        tiledMap = new TmxMapLoader().load("core/assets/tilemaps/random_maze.tmx");
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
         startTime = System.currentTimeMillis();
     }
@@ -208,6 +217,10 @@ public class GameScreen implements Screen {
             game.batch.draw(rat.getTextureRegion(), ratPos.x, ratPos.y, rat.getCenterX(), rat.getCenterY(), rat.getWidth(),
                     rat.getHeight(), 1, 1, rat.getAngle());
 
+            if (!rat.getNightvision()) {
+                game.batch.draw(dark, 0, 0, w, h);
+            }
+
             game.font.setColor(Color.WHITE);
             game.font.draw(game.batch, "Score: " + score, 10, 460);
 
@@ -224,6 +237,7 @@ public class GameScreen implements Screen {
             game.shapeRenderer.setColor(Color.RED);
             game.shapeRenderer.rect(10, 430, rat.getHealth(), 10);
             game.shapeRenderer.end();
+
 
             try {
                 Thread.sleep(17);

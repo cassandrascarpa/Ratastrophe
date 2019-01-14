@@ -23,7 +23,7 @@ public class Character {
 
     private int health = 100;
 
-    private int vision = 50;
+    private boolean nightvision = false;
 
     private enum Direction {Up, Down, Left, Right}
     private Direction facing = Direction.Right;
@@ -224,11 +224,11 @@ public class Character {
         this.speedY = speedY;
     }
 
-    public int getVision() {
-        return vision;
+    public boolean getNightvision() {
+        return nightvision;
     }
 
-    public void setVision(int vision) {
-        this.vision = vision;
+    public void setNightvision(boolean vision) {
+        this.nightvision = vision;
     }
 }

@@ -36,6 +36,7 @@ public class LevelWinScreen implements Screen {
     }
 
     public void hide() {
+        dispose();
 
     }
 

@@ -28,9 +28,9 @@ public class InstructionScreen implements Screen {
     public InstructionScreen(final Rats game) {
         this.game = game;
 
-        backarrowTexture = new Texture("core/assets/backarrow.png");
+        backarrowTexture = new Texture("core/assets/menu/backarrow.png");
         backarrowDrawable = new TextureRegionDrawable(new TextureRegion(backarrowTexture));
-        backarrowTextureHover = new Texture("core/assets/backarrow_hover.png");
+        backarrowTextureHover = new Texture("core/assets/menu/backarrow_hover.png");
         backarrowDrawableHover = new TextureRegionDrawable(new TextureRegion(backarrowTextureHover));
         backButton = new ImageButton(backarrowDrawable);
 
@@ -88,10 +88,11 @@ public class InstructionScreen implements Screen {
     }
 
     public void hide() {
+        dispose();
 
     }
 
     public void dispose() {
-
+        stage.dispose();
     }
 }

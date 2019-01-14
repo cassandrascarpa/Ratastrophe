@@ -34,6 +34,7 @@ public class GameOverScreen implements Screen {
     }
 
     public void hide() {
+        dispose();
 
     }
 

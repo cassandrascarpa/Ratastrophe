@@ -29,27 +29,27 @@ public class Consumable {
         switch (typenum) {
             case 0:
                 type = consumable_types.Health;
-                texture = new Texture(Gdx.files.internal("core/assets/health.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/health.png"));
                 num_points = 1;
                 break;
             case 1:
                 type = consumable_types.Speed;
-                texture = new Texture(Gdx.files.internal("core/assets/speed.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/speed.png"));
                 num_points = 0;
                 break;
             case 2:
                 type = consumable_types.Carrot;
-                texture = new Texture(Gdx.files.internal("core/assets/carrot.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/carrot.png"));
                 num_points = 1;
                 break;
             case 3:
                 type = consumable_types.Time;
-                texture = new Texture(Gdx.files.internal("core/assets/time.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/time.png"));
                 num_points = 0;
                 break;
             default:
                 type = consumable_types.Cheese;
-                texture = new Texture(Gdx.files.internal("core/assets/cheese.png"));
+                texture = new Texture(Gdx.files.internal("core/assets/sprites/cheese.png"));
                 num_points = 5;
                 break;
         }
@@ -61,7 +61,7 @@ public class Consumable {
             consumed = true;
             switch (type) {
                 case Carrot:
-                    rat.setVision(rat.getVision() + 10);
+                    rat.setNightvision(true);
                     break;
                 case Time:
                     gs.setTimeOut(gs.getTimeOut() + 20000);
@@ -77,6 +77,10 @@ public class Consumable {
             return num_points;
         }
         return 0;
+    }
+
+    public void animate() {
+
     }
 
 
