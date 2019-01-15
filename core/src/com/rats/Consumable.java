@@ -96,8 +96,16 @@ public class Consumable {
         return sprite;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
     public Rectangle getBoundingRectangle() {
-        return new Rectangle(xPos, yPos, width, height);
+        return new Rectangle(xPos, yPos-height, width, height);
     }
 
     public boolean getConsumed() {

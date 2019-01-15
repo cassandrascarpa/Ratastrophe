@@ -160,6 +160,23 @@ public class GameScreen implements Screen {
             tiledMapRenderer.setView(camera);
             tiledMapRenderer.render();
             game.batch.begin();
+            for (Consumable c : maze.getConsumables()) {
+                if (!c.getConsumed()) {
+                    Vector2 cPos = worldToScreenCoords(new Vector2(c.getxPos(), c.getyPos()));
+                    c.getSprite().setPosition(cPos.x, cPos.y);
+                    c.getSprite().setSize(20, 20);
+                    c.getSprite().draw(game.batch);
+                }
+            }
+
+            for (Trap t : maze.getTraps()) {
+                if (!t.isSprung()) {
+                    Vector2 tPos = worldToScreenCoords(new Vector2(t.getxPos(), t.getyPos()));
+                    t.getSprite().setPosition(tPos.x, tPos.y);
+                    t.getSprite().setSize(20, 20);
+                    t.getSprite().draw(game.batch);
+                }
+            }
             game.font.setColor(Color.WHITE);
             game.font.draw(game.batch, "Level Preview", 10, 460);
             game.font.draw(game.batch, formatTime(timeRemaining), 400, 460);
@@ -198,7 +215,7 @@ public class GameScreen implements Screen {
                 if (!c.getConsumed()) {
                     Vector2 cPos = worldToScreenCoords(new Vector2(c.getxPos(), c.getyPos()));
                     c.getSprite().setPosition(cPos.x, cPos.y);
-                    c.getSprite().setSize(50, 50);
+                    c.getSprite().setSize(c.getWidth(), c.getHeight());
                     c.getSprite().draw(game.batch);
                 }
             }
@@ -207,7 +224,7 @@ public class GameScreen implements Screen {
                 if (!t.isSprung()) {
                     Vector2 tPos = worldToScreenCoords(new Vector2(t.getxPos(), t.getyPos()));
                     t.getSprite().setPosition(tPos.x, tPos.y);
-                    t.getSprite().setSize(50, 50);
+                    t.getSprite().setSize(t.getWidth(), t.getHeight());
                     t.getSprite().draw(game.batch);
                 }
             }

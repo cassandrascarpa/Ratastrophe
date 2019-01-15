@@ -11,8 +11,8 @@ public class Trap {
 
     private int xPos;
     private int yPos;
-    private int height = 50;
-    private int width = 50;
+    private int height;
+    private int width;
     private trap_types type;
 
     private int damage;
@@ -30,11 +30,15 @@ public class Trap {
                 type = trap_types.Snapper;
                 texture = new Texture(Gdx.files.internal("core/assets/sprites/snapper.png"));
                 damage = 50;
+                height = 80;
+                width = 80;
                 break;
             default:
                 type = trap_types.Zapper;
                 texture = new Texture(Gdx.files.internal("core/assets/sprites/zapper.png"));
                 damage = 20;
+                height = 40;
+                width = 130;
                 break;
         }
         sprite = new Sprite(texture);
@@ -52,8 +56,16 @@ public class Trap {
 
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
     public Rectangle getBoundingRectangle() {
-        return new Rectangle(xPos, yPos, width, height);
+        return new Rectangle(xPos, yPos-height, width, height);
     }
 
     public boolean isSprung() {

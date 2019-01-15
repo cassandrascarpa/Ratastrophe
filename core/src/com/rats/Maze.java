@@ -156,7 +156,7 @@ public class Maze {
 
 
     public void generateConsumables() {
-        int num_consumables = rand.nextInt(10)+1;
+        int num_consumables = rand.nextInt(10)+2;
         consumables = new Consumable[num_consumables];
         for (int i=0; i < num_consumables; i++) {
             int xpos = 0;
@@ -174,7 +174,7 @@ public class Maze {
         int num_traps = rand.nextInt(5)+1;
         traps = new Trap[num_traps];
         for (int i=0; i < num_traps; i++) {
-            int xpos = rand.nextInt(worldcoord_xmax);
+            int xpos = rand.nextInt(worldcoord_xmax / 2);
             int ypos = rand.nextInt(worldcoord_ymax);
             traps[i] = new Trap(xpos, ypos, rand.nextInt(3));
         }
